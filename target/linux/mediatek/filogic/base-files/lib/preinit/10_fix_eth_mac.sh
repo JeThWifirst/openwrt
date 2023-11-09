@@ -17,6 +17,12 @@ preinit_set_mac_address() {
 		ip link set dev eth0 address "$addr"
 		ip link set dev eth1 address "$addr"
 		;;
+	glinet,gl-x3000|\
+	glinet,gl-xe3000)
+		addr=$(get_mac_binary "/dev/mmcblk0p3" 0x0a)
+		ip link set dev eth0 address "$addr"
+		ip link set dev eth1 address "$(macaddr_add $addr 1)"
+		;;
 	mercusys,mr90x-v1)
 		addr=$(get_mac_binary "/tmp/tp_data/default-mac" 0)
 		ip link set dev eth1 address "$(macaddr_add $addr 1)"

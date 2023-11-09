@@ -9,6 +9,10 @@ set_preinit_iface() {
 		ip link set eth1 up
 		ifname=eth1
 		;;
+	glinet,gl-x3000|\
+	glinet,gl-xe3000)
+		ifname=eth0
+		;;
 	ubnt,unifi-6-lr)
 		ip link set eth0 up
 		ifname=eth0
@@ -21,4 +25,3 @@ set_preinit_iface() {
 }
 
 boot_hook_add preinit_main set_preinit_iface
-
