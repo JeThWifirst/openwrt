@@ -406,7 +406,8 @@ define Device/glinet_gl-x3000-xe3000-common
   DEVICE_DTS_DIR := ../dts
   DEVICE_PACKAGES := kmod-mt7981-firmware mt7981-wo-firmware mkf2fs \
     kmod-fs-f2fs kmod-hwmon-pwmfan kmod-usb3 kmod-usb-serial-option \
-    kmod-usb-storage kmod-usb-net-qmi-wwan uqmi
+    kmod-usb-storage kmod-usb-net-qmi-wwan uqmi \
+    kmod-mhi-pci-generic kmod-mhi-net kmod-mhi-wwan-ctrl
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 

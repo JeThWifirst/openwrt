@@ -1,0 +1,12 @@
+--- a/drivers/bus/mhi/host/pci_generic.c
++++ b/drivers/bus/mhi/host/pci_generic.c
+@@ -574,6 +574,9 @@ static const struct pci_device_id mhi_pc
+ 	/* RM520N-GL (sdx6x), eSIM */
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_QUECTEL, 0x1004),
+ 		.driver_data = (kernel_ulong_t) &mhi_quectel_rm5xx_info },
++	/* RM520N-GL (sdx6x), GL-X3000 and GL-XE3000 */
++	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0308, 0x17cb, 0x5201),
++		.driver_data = (kernel_ulong_t) &mhi_quectel_rm5xx_info },
+ 	/* T99W175 (sdx55), Both for eSIM and Non-eSIM */
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_FOXCONN, 0xe0ab),
+ 		.driver_data = (kernel_ulong_t) &mhi_foxconn_sdx55_info },
